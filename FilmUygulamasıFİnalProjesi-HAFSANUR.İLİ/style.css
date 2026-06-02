@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0e1f; 
+    color: #d0cece;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    letter-spacing: 4px; /* Işığın birbirine girmemesi için harf arasını biraz açtık */
+    text-transform: uppercase; 
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.8rem; 
+
+    /* FOSFOR (NEON) EFEKTİ */
+    color: #ffffff; /* Ana metin rengi parlak beyaz olmalı */
+    text-shadow: 
+        0 0 5px #00e6ff,   /* 1. Katman: Yazıya bitişik ince parlama */
+        0 0 10px #00e6ff,  /* 2. Katman: Biraz daha dağılmış parlama */
+        0 0 20px #00e6ff,  /* 3. Katman: Ana fosfor rengi (Cyan/Açık Mavi) */
+        0 0 40px #0f3c61,  /* 4. Katman: Dışarı doğru yayılan daha koyu mavi ışık */
+        0 0 80px #022d50;  /* 5. Katman: En geniş ve yumuşak dış ışıma */
+}
+
+#kategoriSecimi {
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid rgb(213, 221, 255); 
+    border-radius: 25px; 
+    outline: none;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer; 
+    appearance: none; 
+}
+
+#kategoriSecimi:focus {
+    box-shadow: 0 0 10px rgba(213, 221, 255, 0.8);
+    border-color: #aebbf2;
+}
+
+.film-izgarasi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.film-karti {
+    background-color: rgb(245, 248, 255); 
+    border-radius: 12px; 
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(239, 237, 237, 0.795); 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.film-karti:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 20px rgba(248, 247, 247, 0.15); 
+}
+
+.film-karti img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: top; 
+}
+
+.film-detay {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.film-detay h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+.film-detay p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6; 
+    margin-bottom: 15px;
+}
+
+.puan-etiketi {
+    margin-top: auto;
+    align-self: flex-start; 
+    background-color: #6e0909; 
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+/* Yorum Alanı Genel Boşlukları */
+.yorum-alani {
+    margin-top: 20px; /* Üstteki öğelerle (puan, açıklama) arasını açar */
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.yorum-alani h4 {
+    color: #222;
+    margin-bottom: 15px; /* Başlık ile inputlar arasını açar */
+    font-size: 1.1rem;
+}
+
+/* Formu Alt Alta ve Boşluklu Dizme */
+.yorum-formu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Tüm inputların arasına 12px boşluk koyar */
+}
+
+/* İsim ve Puanı Yan Yana Tutma */
+.yorum-form-ust {
+    display: flex;
+    gap: 10px; /* İsim ve puan inputu arasındaki boşluk */
+}
+
+/* Form Elemanlarının Tasarımı */
+.yorum-input, .yorum-textarea {
+    width: 100%;
+    padding: 10px 12px; /* İçeriden ferahlatır */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Köşeleri yuvarlatır */
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none; /* Tıklayınca çıkan siyah çerçeveyi kaldırır */
+    background-color: #fbfbfb;
+    transition: border-color 0.3s ease;
+}
+
+/* Inputlara tıklanınca renginin değişmesi */
+.yorum-input:focus, .yorum-textarea:focus {
+    border-color: #0f3c61;
+}
+
+.yorum-textarea {
+    resize: vertical;
+    min-height: 70px; /* Yorum yazma alanını daha geniş yapar */
+}
+
+/* Gönder Butonu Tasarımı */
+.yorum-gonder-btn {
+    background-color: #0f3c61;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.yorum-gonder-btn:hover {
+    background-color: #022d50;
+}
